@@ -1,0 +1,25 @@
+@import '../../../styles/settings';
+
+.layout {
+  &_social_icons {
+    position: absolute;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    left: 0px;
+    top: calc(50% - (275px / 2));
+  }
+
+  &_content {
+    margin: 10%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  &_icon {
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+}

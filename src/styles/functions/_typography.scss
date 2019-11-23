@@ -1,0 +1,65 @@
+// Convert pixels into a relative unit, em and rem
+//
+//
+// @internal
+//
+// @param $pixels {List} - One or more CSS pixel value
+// @param $context {CSS Value [%, px]} - A base-fond context as denominator in calculation
+// @param $units {Enum} - ['em', 'rem'] - The type of relative unit to use
+//
+// Usage:
+// convertTo(12px, 100%, 'em');
+// convertTo(20px 10px, 10px, 'rem');
+// convertTo(30px, 16px, 'em');
+// convertTo(40px, 93.8%, 'rem');
+
+@function _convertTo($pixels, $context, $units) {
+  $list: ();
+
+  // If $context is a %, convert to px
+  @if(str-slice(inspect($context), str-length(inspect($context))) == '%') {
+    $value : $context / ($context * 0 + 1);
+    $context: round(($value / 100) * 16px);
+  }
+
+  @if(length($pixels) > 1) {
+    @each $value in $pixels {
+      $list: append($list, ($value / $context * 1#{units}), space);
+    }
+  } @else {
+    $list: $pixels / $context * 1#{$units};
+  }
+
+  @return $list;
+}
+
+// PX to EM calculator - ability to pass multiple values
+//
+// @param $pixels {List} - One or more CSS pixel value
+// @param $context {CSS Value [%, px]} - A base-font context as denominator in calculation
+//
+// Usage:
+// em(12px);
+// em(20px 10px);
+// em(30px, 16px);
+// em(40px, 93.8%);
+
+@function em($pixels, $context: $base-font-size) {
+  @return _convertTo($pixels, $context , 'em');
+}
+
+// PX to REM calculator - ability to pass multiple values
+//
+// @param $pixels {List} - One or more CSS pixel value
+// @param $context {CSS Value [%, px]} - A base-font context as denominator in calculation
+//
+// Usage:
+// em(12px);
+// em(20px 10px);
+// em(30px, 16px);
+// em(40px, 93.8%);
+
+@function rem($pixels, $context: $base-font-size) {
+  @return _convertTo($pixels, $context , 'rem');
+}
+

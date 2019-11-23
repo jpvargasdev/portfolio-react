@@ -1,0 +1,13 @@
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+// @param $breakpoint {String} - A name of a breakpoint
+// @param $breakpoints {Map|List} - Map or List of breakpoints
+//
+// Usage:
+// breakpoint-min(sm, (xs: 0, sm: 576px, ...));
+@function breakpoint-min($breakpoint, $breakpoints: $grid-breakpoints) {
+  $min: if(type-of($breakpoints) == 'map',
+    map-get($breakpoints, $breakpoint), nth($breakpoints, $breakpoint));
+
+  @return if($min != 0, $min, null);
+}
