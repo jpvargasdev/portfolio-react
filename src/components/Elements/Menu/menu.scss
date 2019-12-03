@@ -3,9 +3,9 @@
 .menu {
   &_button {
     position: absolute;
-    right: 40px;
+    right: 10px;
     @include respond-to('small') {
-      right: 20px;
+      right: 5%;
     }
     top: 5%;
   }

@@ -14,7 +14,7 @@ $class-prefix: 'pds' !default;
 // EMpty maps for merging
 $grid-margins: () !default;
 $grid-column-gaps: () !default;
-$breakpoints: (
+$grid-breakpoints: (
   'small':  ( min-width:  767px ),
   'medium': ( min-width:  992px ),
   'large':  ( min-width: 1200px )
@@ -85,12 +85,11 @@ $elevation6: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
 // 6. Mixins
 
-/**
-* Mixin to manage responsive breakpoints
-* @param {String} $breakpoint - Breakpoint name
-*/
-
-@mixin respond-to($breakpoint) {
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint, $breakpoints: $grid-breakpoints) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
     // Prints a media query based on the value
@@ -103,6 +102,5 @@ $elevation6: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
-    @content;
   }
 }
