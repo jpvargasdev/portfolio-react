@@ -1,10 +1,10 @@
-@import '../../../styles/settings';
+@import "../../../styles/settings";
 
 .menu {
   &_button {
     position: absolute;
     right: 10px;
-    @include respond-to('small') {
+    @include respond-to("small") {
       right: 5%;
     }
     top: 5%;
@@ -29,6 +29,14 @@
     &-close {
       visibility: hidden;
       opacity: 0;
+    }
+  }
+
+  &_sticky {
+    &-true {
+      position: fixed;
+      top: 5%;
+      width: 100%
     }
   }
 }

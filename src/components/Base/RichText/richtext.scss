@@ -1,0 +1,14 @@
+.rich_text {
+  text-align: center;
+  font-size: x-large;
+
+  &-bold {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: x-large;
+
+    &:hover {
+      color: black;
+    }
+  }
+}

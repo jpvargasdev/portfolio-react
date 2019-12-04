@@ -1,0 +1,12 @@
+.button {
+  cursor: pointer;
+  &-default {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-weight: bolder;
+    padding: 20px;
+    font-size: medium;
+    text-align: center;
+    border-radius: 10px;
+  }
+}

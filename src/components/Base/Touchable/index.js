@@ -1,30 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 // style
-import './touchable.scss';
+import "./touchable.scss";
 
-const Touchable = ({
-  className,
-  onClick,
-  children,
-  variant,
-}) => {
-  let defaultStyle = "touchable_button";
-  switch (variant) {
-    case 'elevation':
-      defaultStyle += "-zoom";
-      break;
-    case 'zoom':
-      defaultStyle += '-zoom';
-      break;
-    default:
-      break;
-  }
+const Touchable = ({ className, onClick, children, animation }) => {
   return (
     <button
       type="button"
-      className={`touchable_button ${defaultStyle} ${className}`}
+      className={`touchable touchable-${animation} ${className}`}
       onClick={onClick}
     >
       {children}
@@ -36,7 +20,14 @@ Touchable.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.node,
-  variant: PropTypes.oneOf(['elevation', 'zoom']),
-}
+  animation: PropTypes.oneOf(["elevation", "zoom"])
+};
+
+Touchable.defaultProps = {
+  className: "",
+  onClick: () => true,
+  children: null,
+  animation: "elevation"
+};
 
 export default Touchable;

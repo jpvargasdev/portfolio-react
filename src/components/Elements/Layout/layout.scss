@@ -1,13 +1,22 @@
-@import '../../../styles/settings';
+@import "../../../styles/settings";
 
 .layout {
   &_social_icons {
     position: absolute;
-    width: 20px;
     display: flex;
-    flex-direction: column;
-    left: 0px;
-    top: calc(50% - (275px / 2));
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0px;
+
+    @include respond-to("small") {
+      width: 20px;
+      flex-direction: column;
+      left: 0px;
+      top: calc(50% - (275px / 2));
+      bottom: unset;
+      margin-left: 5%;
+    }
   }
 
   &_content {

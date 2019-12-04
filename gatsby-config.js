@@ -5,7 +5,7 @@ console.log(`Using environment config: '${activeEnv}'`);
 
 module.exports = {
   siteMetadata: {
-    title: "Juan Vargas Portfolio",
+    title: "Juan Vargas",
     description: "Portfolio",
     author: "@iclown"
   },
