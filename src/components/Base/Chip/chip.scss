@@ -1,0 +1,21 @@
+@import "../../../styles/settings";
+
+.chip {
+  &_container {
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: rgba(50, 50, 50, 0.9);
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 0px 10px;
+    @include respond-to("mobile") {
+      display: none;
+    }
+    @include respond-to("small") {
+      display: flex;
+    }
+  }
+}

@@ -23,7 +23,6 @@ const DEFAULT_ICON_PROPS = {
 const Layout = ({ showParticles, showMenu, showSocial, stickyMenu }) => (
   <div>
     {showParticles && <Particles />}
-    {showMenu && <Menu stickyMenu={stickyMenu} />}
     {showSocial && (
       <ul className="layout_social_icons">
         <li className="layout_icon">
@@ -43,6 +42,7 @@ const Layout = ({ showParticles, showMenu, showSocial, stickyMenu }) => (
         </li>
       </ul>
     )}
+    {showMenu && <Menu stickyMenu={stickyMenu} />}
   </div>
 );
 

@@ -1,12 +1,44 @@
+@import "../../../styles/settings";
+
 .button {
   cursor: pointer;
+  border-radius: 5px;
   &-default {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-weight: bolder;
+    background-color: $base-background-dark-color;
+    color: $base-color;
+    font-family: $brand-font-bold;
+    font-weight: bold;
     padding: 20px;
     font-size: medium;
     text-align: center;
-    border-radius: 10px;
+    box-shadow: $elevation4;
+  }
+
+  &-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $base-background-dark-color;
+    color: $base-color;
+    font-family: $brand-font-bold;
+    font-weight: bold;
+    padding: 20px;
+    font-size: medium;
+    text-align: center;
+    box-shadow: $elevation4;
+  }
+
+  &-menu {
+    background-color: $base-background-color;
+    color: $base-font-color;
+    font-family: $brand-font-bold;
+    font-weight: bold;
+    font-size: 100px;
+    font-size: medium;
+    text-align: center;
+    width: 70%;
+    height: 20%;
+    margin-bottom: 40px;
   }
 }

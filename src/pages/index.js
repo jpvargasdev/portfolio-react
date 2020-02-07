@@ -33,9 +33,9 @@ const IndexPage = ({ data }) => {
 
   return (
     <main>
-      <Layout showParticles showMenu showSocial />
-      <Seo title="Home" />
+      <Seo />
       <Home description={json} />
+      <Layout showParticles showMenu showSocial />
     </main>
   );
 };

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import "./functions/maps";
 
 // Table of Contents:
@@ -15,6 +16,7 @@ $class-prefix: 'pds' !default;
 $grid-margins: () !default;
 $grid-column-gaps: () !default;
 $grid-breakpoints: (
+  'mobile':  ( min-width:  0px ),
   'small':  ( min-width:  767px ),
   'medium': ( min-width:  992px ),
   'large':  ( min-width: 1200px )
@@ -23,9 +25,12 @@ $grid-breakpoints: (
 // 2. Colors
 // ------
 $base-background-color: white !default;
-$base-font-color: gray !default;
-$base-link-color: red !default;
-$color-daniela: cyan !default;
+$base-background-dark-color: #222431;
+$base-color: #EAF2F9 !default;
+$accent-color: #EF873C !default;
+$base-font-color: #222431 !default;
+$base-font-secondary-color: #636680 !default;
+$base-link-color: #31456A !default;
 $menu-background-color: rgba(gray, 0.8);
 
 // 3. Typography
@@ -33,10 +38,10 @@ $menu-background-color: rgba(gray, 0.8);
 $base-font-size: 100% !default; // 16px on all browsers
 $base-line-height: 1.5 !default;
 $base-font-weight: 400 !default;
-$base-font-family: 'Helvetica Neue', helvetica, arial, sans-serif !default;
-$brand-font-regular: 'Haas Grotesk Text Regular', $base-font-family !default;
-$brand-font-medium: 'Haas Grotesk Text Medium', $base-font-family !default;
-$brand-font-bold: 'Haas Grotesk Text Bold', $base-font-family !default;
+$base-font-family: 'Poppins', helvetica, arial, sans-serif !default;
+$brand-font-regular: 'Poppins Regular', $base-font-family !default;
+$brand-font-medium: 'Poppins Medium', $base-font-family !default;
+$brand-font-bold: 'Poppins Bold', $base-font-family !default;
 
 // 4. Font Scaling
 $display-line-height: 1.25 !default;
@@ -81,7 +86,6 @@ $elevation3: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 $elevation4: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 $elevation5: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 $elevation6: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-
 
 // 6. Mixins
 

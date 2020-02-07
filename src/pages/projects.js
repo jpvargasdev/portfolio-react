@@ -9,7 +9,7 @@ import { Seo } from "components/Base";
 import { Layout } from "components/Elements"
 
 // template
-import Projects from "templates/Projects";
+import Works from "templates/Works";
 
 // styles
 import "../styles/index.scss";
@@ -42,9 +42,9 @@ const WorksPage = ({ data }) => {
   const projects = data.allContentfulProjects.edges;
   return (
     <main>
+      <Seo title="Projects" />
+      <Works projects={projects} />
       <Layout showMenu showParticles stickyMenu />
-      <Seo title="Works" />
-      <Projects projects={projects} />
     </main>
   );
 };

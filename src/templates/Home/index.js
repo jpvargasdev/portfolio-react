@@ -10,7 +10,7 @@ import Button from "components/Elements/Button";
 import "./home.scss";
 
 const navigateToHome = () => {
-  navigate("works");
+  navigate("projects ");
 };
 
 const Home = ({ description }) => {
@@ -18,12 +18,15 @@ const Home = ({ description }) => {
   return (
     <div className="home_container">
       <div className="home_description">{RichText}</div>
-      <Button
-        text="Go to my projects"
-        variant="default"
-        animation="elevation"
-        onClick={navigateToHome}
-      />
+      <div className="home_button">
+        <Button
+          text="Go to my projects"
+          variant="icon"
+          animation="elevation"
+          onClick={navigateToHome}
+          useIcon
+        />
+      </div>
     </div>
   );
 };

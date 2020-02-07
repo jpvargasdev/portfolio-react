@@ -16,6 +16,8 @@ const Bold = ({ children }) => (
 );
 const Text = ({ children }) => <p className="rich_text">{children}</p>;
 
+const Hr = () => <br />;
+
 Bold.propTypes = types;
 Bold.defaultProps = typesDefault;
 Text.propTypes = types;
@@ -26,7 +28,8 @@ const options = {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>
+    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+    [BLOCKS.HR]: () => <Hr />
   }
 };
 

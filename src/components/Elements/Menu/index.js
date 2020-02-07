@@ -1,14 +1,20 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { navigate } from "gatsby"
 
 // components
 import IosMenu from "react-ionicons/lib/IosMenu";
 import IosClose from "react-ionicons/lib/MdClose";
 import { Touchable } from "../../Base";
+import Button from "../Button";
 
 // style
 import "./menu.scss";
+
+const navigateToRoute = route => {
+  navigate(route);
+}
 
 const Menu = ({ stickyMenu }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -17,11 +23,15 @@ const Menu = ({ stickyMenu }) => {
   const Icon = showMenu ? IosClose : IosMenu;
   const iconColor = showMenu ? "white" : "black";
   return (
-    <nav className={menuStyle}>
-      <div className={style} />
+    <nav>
+      <div className={style}>
+        <Button text="HOME" variant="menu" onClick={() => navigateToRoute("/")} />
+        <Button text="WORKS" variant="menu" onClick={() => navigateToRoute("/works")} />
+        <Button text="ABOUT" variant="menu" onClick={() => navigateToRoute("/about")} />
+      </div>
       <Touchable
         onClick={() => setShowMenu(!showMenu)}
-        className="menu_button"
+        className={`menu_button ${menuStyle}`}
         animation="zoom"
       >
         <Icon fontSize="40px" color={iconColor} />

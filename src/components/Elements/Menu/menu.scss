@@ -9,14 +9,19 @@
     }
     top: 5%;
   }
+
   &_content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     position: absolute;
     visibility: hidden;
     top: 0px;
     left: 0px;
     height: 100%;
     width: 100%;
-    overflow: hidden;
     background-color: rgba(gray, 0.9);
     opacity: 0;
     transition: all .5s;
@@ -36,7 +41,8 @@
     &-true {
       position: fixed;
       top: 5%;
-      width: 100%
+      width: 100%;
+      left: 40%;
     }
   }
 }
