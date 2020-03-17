@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import PropTypes from "prop-types";
-import { navigate } from "gatsby"
+import { navigate } from "gatsby";
 
 // components
 import IosMenu from "react-ionicons/lib/IosMenu";
@@ -48,4 +48,4 @@ Menu.defaultProps = {
   stickyMenu: false
 };
 
-export default Menu;
+export default memo(Menu);

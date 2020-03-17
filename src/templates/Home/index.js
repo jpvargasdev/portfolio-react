@@ -10,7 +10,7 @@ import Button from "components/Elements/Button";
 import "./home.scss";
 
 const navigateToHome = () => {
-  navigate("projects ");
+  navigate("works ");
 };
 
 const Home = ({ description }) => {

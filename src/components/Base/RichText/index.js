@@ -12,24 +12,34 @@ const typesDefault = {
 };
 
 const Bold = ({ children }) => (
-  <span className="rich_text-bold">{children}</span>
+  <span className="rich_text rich_text-bold">{children}</span>
 );
-const Text = ({ children }) => <p className="rich_text">{children}</p>;
+const Paragraph = ({ children }) => <p className="rich_text rich_text-p">{children}</p>;
 
 const Hr = () => <br />;
 
+const H1 = ({ children }) => <h1 className="rich_text rich_text-h1">{children}</h1>
+const H6 = ({ children }) => <h6 className="rich_text rich_text-h6">{children}</h6>
+
+
 Bold.propTypes = types;
 Bold.defaultProps = typesDefault;
-Text.propTypes = types;
-Text.defaultProps = typesDefault;
+Paragraph.propTypes = types;
+Paragraph.defaultProps = typesDefault;
+Hr.propTypes = types;
+Hr.defaultProps = typesDefault;
+H1.propTypes = types;
+H1.defaultProps = typesDefault;
 
 const options = {
   renderMark: {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-    [BLOCKS.HR]: () => <Hr />
+    [BLOCKS.PARAGRAPH]: (node, children) => <Paragraph>{children}</Paragraph>,
+    [BLOCKS.HR]: () => <Hr />,
+    [BLOCKS.HEADING_1]: (node, children) => <H1>{children}</H1>,
+    [BLOCKS.HEADING_6]: (node, children) => <H6>{children}</H6>
   }
 };
 

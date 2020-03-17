@@ -1,23 +1,43 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
+
+// components
+import Touchable from '../Touchable';
 
 // style
 import "./chip.scss";
 
 const Chip = ({
-  children
-}) => (
-  <li className="chip_container">
-    {children}
-  </li>
-);
+  children,
+  key,
+  onClick,
+  selected,
+}) => {
+  const className = selected ? "chip_container chip_container-selected" : "chip_container";
+  if(onClick) {
+    return (
+      <li key={key} >
+        <Touchable className={className} onClick={()=> onClick(children)} animation="zoom">
+          {children}
+        </Touchable>
+      </li>
+    );
+  }
+  return (
+    <li key={key} className={className}>
+      {children}
+    </li>
+  );
+};
 
 Chip.propTypes = {
-  children: PropTypes.string
+  children: PropTypes.string,
+  selected: PropTypes.bool,
 };
 
 Chip.defaultProps = {
-  text: ""
+  children: "All",
+  selected: false,
 };
 
-export default Chip;
+export default memo(Chip);

@@ -6,13 +6,14 @@ import { graphql } from "gatsby";
 
 // components
 import { Seo } from "components/Base";
-import { Layout } from "components/Elements"
+import { Layout } from "components/Elements";
+import renderRichText from "components/Base/RichText";
 
 // template
 import Works from "templates/Works";
 
 // styles
-import "../styles/index.scss";
+import "../../styles/index.scss";
 
 export const query = graphql`
   {
@@ -31,6 +32,22 @@ export const query = graphql`
             file {
               url
             }
+            description
+          }
+          images {
+            id
+            file {
+              url
+            }
+          }
+        }
+      }
+    },
+    allContentfulAuthor {
+      edges {
+        node {
+          description {
+            json
           }
         }
       }
@@ -39,11 +56,13 @@ export const query = graphql`
 `;
 
 const WorksPage = ({ data }) => {
+  const { json } = data.allContentfulAuthor.edges[0].node.description;
   const projects = data.allContentfulProjects.edges;
+  const RichText = renderRichText(json);
   return (
     <main>
-      <Seo title="Projects" />
-      <Works projects={projects} />
+      <Seo title="Works" />
+      <Works projects={projects} description = {RichText} />
       <Layout showMenu showParticles stickyMenu />
     </main>
   );

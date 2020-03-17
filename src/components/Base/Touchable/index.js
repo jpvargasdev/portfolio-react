@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 
 // style
@@ -30,4 +30,4 @@ Touchable.defaultProps = {
   animation: "elevation"
 };
 
-export default Touchable;
+export default memo(Touchable);

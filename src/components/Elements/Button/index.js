@@ -12,7 +12,7 @@ import "./button.scss";
 // constants
 const DEFAULT_ICON_PROPS = {
   fontSize: "20px",
-  color: "#EF873C"
+  color: "white"
 };
 
 const renderIcon = () => <Arrow {...DEFAULT_ICON_PROPS} />;

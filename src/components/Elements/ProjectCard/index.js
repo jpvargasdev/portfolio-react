@@ -8,7 +8,7 @@ import Chip from "../../Base/Chip";
 // style
 import "./project-card.scss";
 
-const ProjectCard = ({ element }) => {
+const ProjectCard = ({ element, onClick }) => {
   const { id, title, technologies, appImages } = element.node;
   const backgroundImage = {
     backgroundImage: `url(${appImages[0].file.url})`,
@@ -23,6 +23,7 @@ const ProjectCard = ({ element }) => {
       className="project-card_item"
       style={backgroundImage}
       type="button"
+      onClick={() => onClick(element.node)}
     >
       <ul className="project-card_content">
         {technologies.map((item, index) => (

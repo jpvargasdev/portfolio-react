@@ -1,5 +1,4 @@
-import React, {useEffect} from 'react';
-import PropTypes from 'prop-types';
+import React, { memo } from 'react';
 
 // components
 import Particles from 'react-particles-js';
@@ -43,4 +42,4 @@ const particlesConfigutation = {
 
 const ParticlesBackground = () => <Particles params={particlesConfigutation} className="particles" />;
 
-export default ParticlesBackground;
+export default memo(ParticlesBackground);
