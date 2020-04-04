@@ -1,0 +1,31 @@
+@import "../../../styles/settings";
+
+.touchable {
+  cursor: pointer;
+  border-width: 0px;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  &-elevation {
+    transition: box-shadow 0.5s cubic-bezier(.25,.8,.25,1);
+  }
+
+  &-elevation:hover {
+    box-shadow: $elevation3;
+  }
+
+  &-zoom {
+    transition: transform 0.5s cubic-bezier(.25,.8,.25,1);
+  }
+
+  &-zoom:hover {
+    transform: scale(1.1);
+  }
+
+  &_disabled-true {
+    background-color: gray !important;
+  }
+}

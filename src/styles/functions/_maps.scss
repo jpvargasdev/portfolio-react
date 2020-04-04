@@ -1,0 +1,60 @@
+// Sorts a map by its values in ascending order
+//
+// @description - Useful after mergin maps; map-merge does not sort maps
+//
+// @param $map {Map} - A SASS map
+//
+// Usage:
+//  map-sort((xs: 0, md: 47.999em, lg: 89.999em, sm: 23em));
+//  >> (xs: 0, sm: 23em, md: 47.999em, lg: 89.999em)
+@function map-sort($map) {
+  // Transform map to zipped list
+  $keys: ();
+  $values: ();
+  $sortedMap: ();
+
+  @each $key, $val in $map {
+    $keys: append($keys, $key);
+    $values: append($values, $val);
+  }
+
+  $list: zip($keys, $values);
+
+  @while length($list) > 0 {
+    // Find smallest pair
+    $smallestPair: nth($list, 1);
+
+    @each $pair in $list {
+      $value: nth($pair, 2);
+      $smallestValue: nth($smallestPair, 2);
+
+      @if $value < $smallestValue {
+        $smallestPair: $pair;
+      }
+    }
+
+    // Add smallest pair to sorted map
+    $key: nth($smallestPair, 1);
+    $value: nth($smallestPair, 2);
+    $sortedMap: map-merge($sortedMap, ($key: $value));
+
+    // Remove from list smallest pair
+    $smallestPairIndex: index($list, $smallestPair);
+    $newList: ();
+
+    @for $i from 1 through length($list) {
+      @if $i != $smallestPairIndex {
+        $newList: append($newList, nth($list, $i), "space");
+      }
+    }
+
+    $list: $newList;
+  }
+
+  @return $sortedMap;
+}
+
+
+
+
+

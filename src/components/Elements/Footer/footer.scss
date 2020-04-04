@@ -1,0 +1,24 @@
+.footer {
+  &_container {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+
+    h3 {
+      font-size: larger;
+      text-align: center;
+      font-weight: bolder;
+    }
+
+    p {
+      font-size: medium;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    span {
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}

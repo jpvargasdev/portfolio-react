@@ -1,0 +1,27 @@
+@import "../../../styles/settings";
+
+.chip {
+  &_container {
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: $base-font-secondary-color;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 2px;
+    margin: 5px;
+    box-shadow: $elevation1;
+
+    @include respond-to("mobile") {
+      display: none;
+    }
+    @include respond-to("small") {
+      display: flex;
+    }
+
+    &-selected {
+      background-color: $accent-color;
+    }
+  }
+}

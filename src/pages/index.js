@@ -1,21 +1,55 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+// api
+import { graphql } from "gatsby";
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+// components
+import { Seo } from "components/Base";
+import { Layout } from "components/Elements"
 
-export default IndexPage
+// template
+import Home from "templates/Home";
+
+// styles
+import "../styles/index.scss";
+
+export const query = graphql`
+  {
+    allContentfulAuthor {
+      edges {
+        node {
+          description {
+            json
+          }
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data }) => {
+  const { json } = data.allContentfulAuthor.edges[1].node.description;
+
+  return (
+    <main>
+      <Seo title="Full-Stack Mobile and Web Developer Portfolio" />
+      <Home description={json} />
+      <Layout showParticles showMenu showSocial />
+    </main>
+  );
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    allContentfulAuthor: PropTypes.shape({
+      edges: PropTypes.shape([])
+    })
+  })
+};
+
+IndexPage.defaultProps = {
+  data: {}
+};
+
+export default IndexPage;

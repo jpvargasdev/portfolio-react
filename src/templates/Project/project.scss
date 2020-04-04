@@ -1,0 +1,109 @@
+@import "../../styles/settings";
+
+.project {
+	&_container {
+		margin: 5% 0% 5% 0%;
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+		@include respond-to("medium") {
+			width: 60%;
+		}
+	}
+
+	&_container_image {
+		@include respond-to("mobile") {
+			width: 100%;
+		}
+		@include respond-to("small") {
+			width: 100%;
+		}
+		@include respond-to("medium") {
+			width: 100%;
+		}
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	&_dots {
+		width: 15px;
+		height: 15px;
+		background-color: "gray";
+		border-radius: 15;
+	}
+
+	&_image {
+		max-height: 500px;
+	}
+
+	&_h1 {
+		text-align: center;
+		font-size: 40px;
+		font-weight: bolder;
+		margin-bottom: 20px;
+	}
+
+	&_h2 {
+		font-size: xx-large;
+		font-weight: bolder;
+		margin-bottom: 20px;
+	}
+
+	&_h3 {
+		font-size: small;
+		font-weight: 500;
+		margin-right: 10px;
+	}
+	
+	&_description {
+		margin-top: 20px;
+	}
+
+	&_list-technologies {
+		margin-left: 20px;
+		display: flex;
+		flex: 1;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	&_list-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 10px;
+	}
+
+	&_list-dot {
+		height: 10px;
+		width: 10px;
+		background-color: $base-link-color;
+		border-radius: 50%;
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	&_buttons {
+		margin-bottom: 10px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		border-width: 2px;
+		border-color: $base-color;
+		margin-right: 10px;
+		border-radius: 2px;
+		min-width: 140px;
+
+		&-container {
+			padding: 5px 10px 5px 10px;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
