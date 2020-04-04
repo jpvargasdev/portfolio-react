@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": false,
-  "description": "Gatsby portfolio",
+  "description": "developer portfolio",
   "version": "0.1.0",
   "author": "Juan Vargas <vargasm.jp@gmail.com>",
   "engines": {
@@ -46,10 +46,12 @@
     "prettier-eslint": "^9.0.0"
   },
   "keywords": [
-    "gatsby",
     "portfolio",
-    "react",
-    "sass"
+    "juan vargas",
+    "developer",
+    "full stack",
+    "web developer",
+    "mobile developer"
   ],
   "license": "MIT",
   "scripts": {
