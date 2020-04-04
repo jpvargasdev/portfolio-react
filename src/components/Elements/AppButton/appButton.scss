@@ -1,0 +1,42 @@
+@import "../../../styles/settings";
+
+.button {
+  cursor: pointer;
+  &-default {
+    background-color: $base-background-dark-color;
+    color: $base-color;
+    font-family: $brand-font-bold;
+    font-weight: bold;
+    padding: 20px;
+    font-size: medium;
+    text-align: center;
+    box-shadow: $elevation4;
+  }
+
+  &-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $base-background-dark-color;
+    color: $base-color;
+    font-family: $brand-font-bold;
+    padding: 15px;
+    font-size: medium;
+    text-align: center;
+    box-shadow: $elevation4;
+  }
+
+  &-menu {
+    background-color: $base-background-color;
+    color: $base-font-color;
+    font-family: $brand-font-bold;
+    font-weight: bold;
+    font-size: 100px;
+    font-size: medium;
+    text-align: center;
+    width: 70%;
+    height: 20%;
+    margin-bottom: 40px;
+  }
+}
