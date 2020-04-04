@@ -17,9 +17,9 @@ const DEFAULT_ICON_PROPS = {
 
 const renderIcon = () => <Arrow {...DEFAULT_ICON_PROPS} />;
 
-const Button = ({ text, variant, animation, onClick, useIcon }) => (
+const Button = ({ text, variant, animation, onClick, useIcon, size }) => (
   <Touchable
-    className={`button button-${variant}`}
+    className={`button button-${variant} button-default-${size}`}
     type="button"
     animation={animation}
     onClick={onClick}
@@ -37,13 +37,15 @@ Button.propTypes = {
   variant: PropTypes.string,
   animation: PropTypes.string,
   onClick: PropTypes.func,
-  useIcon: PropTypes.bool
+  useIcon: PropTypes.bool,
+  size: PropTypes.string
 };
 Button.defaultProps = {
   text: "",
   variant: "default",
   animation: "zoom",
   useIcon: false,
+  size: "",
   onClick: () => true
 };
 

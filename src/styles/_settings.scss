@@ -32,6 +32,7 @@ $base-font-color: #222431 !default;
 $base-font-secondary-color: #636680 !default;
 $base-link-color: #31456A !default;
 $menu-background-color: rgba(gray, 0.8);
+$unaccent-color: #6FCC6A;
 
 // 3. Typography
 // ------
@@ -89,10 +90,6 @@ $elevation6: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
 // 6. Mixins
 
-/// Mixin to manage responsive breakpoints
-/// @author Hugo Giraudel
-/// @param {String} $breakpoint - Breakpoint name
-/// @require $breakpoints
 @mixin respond-to($breakpoint, $breakpoints: $grid-breakpoints) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {

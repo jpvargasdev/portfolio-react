@@ -4,30 +4,31 @@ import PropTypes from "prop-types";
 // style
 import "./touchable.scss";
 
-const Touchable = ({ className, onClick, children, animation }) => {
-  return (
-    <button
-      type="button"
-      className={`touchable touchable-${animation} ${className}`}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  );
-};
+const Touchable = ({ className, onClick, children, animation, isDisabled }) => (
+  <button
+    disabled={isDisabled ? "true" : ""}
+    type="button"
+    className={`touchable touchable-${animation} ${className} touchable_disabled-${isDisabled}`}
+    onClick={onClick}
+  >
+    {children}
+  </button>
+);
 
 Touchable.propTypes = {
-  className: PropTypes.string,
-  onClick: PropTypes.func,
+  animation: PropTypes.oneOf(["elevation", "zoom"]),
   children: PropTypes.node,
-  animation: PropTypes.oneOf(["elevation", "zoom"])
+  className: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  onClick: PropTypes.func
 };
 
 Touchable.defaultProps = {
-  className: "",
-  onClick: () => true,
+  animation: "elevation",
   children: null,
-  animation: "elevation"
+  className: "",
+  isDisabled: false,
+  onClick: () => true
 };
 
 export default memo(Touchable);

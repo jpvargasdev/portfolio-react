@@ -9,16 +9,16 @@
   margin-right: auto;
 
   @include respond-to("mobile") {
-    margin-top: 20%;
+    margin-top: 10%;
     width: 90%;
   }
   @include respond-to("small") {
     margin-top: 10%;
-    width: 80%;
+    width: 90%;
   }
   @include respond-to("medium") {
     margin-top: 5%;
-    width: 80%;
+    width: 90%;
   }
 
   &_filter {
@@ -37,7 +37,9 @@
   }
 
   &_description {
+    text-align: justify;
     padding: 0px 10% 0 10%;
     margin-bottom: 16px;
+    width: 100%;
   }
 }

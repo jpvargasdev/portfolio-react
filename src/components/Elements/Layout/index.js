@@ -27,17 +27,35 @@ const Layout = ({ showParticles, showMenu, showSocial, stickyMenu }) => (
       <ul className="layout_social_icons">
         <li className="layout_icon">
           <Touchable animation="zoom">
-            <LogoGithub {...DEFAULT_ICON_PROPS} />
+            <a
+              href="https://github.com/iClownx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LogoGithub {...DEFAULT_ICON_PROPS} />
+            </a>
           </Touchable>
         </li>
         <li className="layout_icon">
           <Touchable animation="zoom">
-            <LogoLinkedin {...DEFAULT_ICON_PROPS} />
+            <a
+              href="https://www.linkedin.com/in/juan-vargas-1736649a/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LogoLinkedin {...DEFAULT_ICON_PROPS} />
+            </a>
           </Touchable>
         </li>
         <li className="layout_icon">
           <Touchable animation="zoom">
-            <LogoInstagram {...DEFAULT_ICON_PROPS} />
+            <a
+              href="https://www.instagram.com/iclown_/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LogoInstagram {...DEFAULT_ICON_PROPS} />
+            </a>
           </Touchable>
         </li>
       </ul>

@@ -11,6 +11,17 @@
     font-size: medium;
     text-align: center;
     box-shadow: $elevation4;
+
+    &-small {
+      padding: 10px 15px !important;
+      font-size: small !important;
+      margin-bottom: 20px;
+
+      @include respond-to("small") {
+        padding: 15px 20px !important;
+        font-size: medium !important;
+      }
+    }
   }
 
   &-icon {

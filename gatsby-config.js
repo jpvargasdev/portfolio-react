@@ -31,13 +31,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: "jpvargas portfolio",
+        short_name: "jpvargas",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#EAF2F9",
+        theme_color: "#EF873C",
         display: "minimal-ui",
-        icon: "src/images/gatsby-icon.png"
+        icon: "src/images/frigate.png"
       }
     },
     "gatsby-plugin-offline",

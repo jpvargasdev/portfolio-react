@@ -14,7 +14,7 @@ import "./menu.scss";
 
 const navigateToRoute = route => {
   navigate(route);
-}
+};
 
 const Menu = ({ stickyMenu }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -25,9 +25,21 @@ const Menu = ({ stickyMenu }) => {
   return (
     <nav>
       <div className={style}>
-        <Button text="HOME" variant="menu" onClick={() => navigateToRoute("/")} />
-        <Button text="WORKS" variant="menu" onClick={() => navigateToRoute("/works")} />
-        <Button text="ABOUT" variant="menu" onClick={() => navigateToRoute("/about")} />
+        <Button
+          text="About"
+          variant="menu"
+          onClick={() => navigateToRoute("/")}
+        />
+        <Button
+          text="Works"
+          variant="menu"
+          onClick={() => navigateToRoute("/works")}
+        />
+        <Button
+          text="Contact"
+          variant="menu"
+          onClick={() => navigateToRoute("/contact")}
+        />
       </div>
       <Touchable
         onClick={() => setShowMenu(!showMenu)}

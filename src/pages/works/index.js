@@ -61,8 +61,8 @@ const WorksPage = ({ data }) => {
   const RichText = renderRichText(json);
   return (
     <main>
-      <Seo title="Works" />
-      <Works projects={projects} description = {RichText} />
+      <Seo title="Full-Stack Mobile and Web Developer Portfolio" />
+      <Works projects={projects} description={RichText} />
       <Layout showMenu showParticles stickyMenu />
     </main>
   );
@@ -71,7 +71,7 @@ const WorksPage = ({ data }) => {
 WorksPage.propTypes = {
   data: PropTypes.shape({
     allContentfulProjects: PropTypes.shape({
-      edges: PropTypes.shape([])
+      edges: PropTypes.array
     })
   })
 };

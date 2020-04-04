@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
 import React from "react";
@@ -7,12 +8,13 @@ import PropTypes from "prop-types";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Chip from "components/Base/Chip";
 import Touchable from "components/Base/Touchable";
+import Footer from "components/Elements/Footer";
 
 // images
-import AppleStoreBadge from "../../assets/apple-store.svg";
+import AppleStoreBadge from "../../assets/app-store.svg";
 import GooglePlayBadge from "../../assets/play-store.svg";
+import WebPageBadge from "../../assets/www-page.svg";
 
 // styles
 import "./project.scss";
@@ -21,36 +23,19 @@ import "./project.scss";
 const slideSettigs = {
   dots: true,
   infinite: true,
+  adaptiveHeight: true,
   speed: 2000,
   autoplay: true,
-  autoplaySpeed: 2000,
+  slidesToShow: 2,
   slidesToScroll: 1,
+  arrows: true,
+  centerMode: "center",
   responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        infinite: true,
-        dots: true,
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        infinite: true,
-        dots: true,
-        centerMode: true
-      }
-    },
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true
+        slidesToScroll: 1
       }
     }
   ]
@@ -58,51 +43,84 @@ const slideSettigs = {
 
 const Project = ({ element }) => {
   const {
+    about,
     androidUrl,
     images,
     iosUrl,
-    resume,
+    introduction,
     technologies,
     title,
-    webUrl,
+    webUrl
   } = element;
-
-  console.log(element);
   return (
     <div className="project_container">
       <h1 className="project_h1">{title}</h1>
-      <h2 className="project_p">{resume}</h2>
+      <p>{introduction}</p>
       <div className="project_buttons">
-        <Touchable animation="zoom">
-          <h2> Android App </h2>
-          <GooglePlayBadge />
-        </Touchable>
-        <Touchable animation="zoom">
-          <h2> iPhone App </h2>
-          <AppleStoreBadge />
-        </Touchable>
+        {androidUrl && (
+          <Touchable
+            onClick={() => window.open(androidUrl, "_blank")}
+            animation="zoom"
+            className="project_buttons project_buttons-container"
+          >
+            <h3 className="project_h3">Android</h3>
+            <GooglePlayBadge />
+          </Touchable>
+        )}
+        {iosUrl && (
+          <Touchable
+            onClick={() => window.open(iosUrl, "_blank")}
+            animation="zoom"
+            className="project_buttons project_buttons-container"
+          >
+            <h3 className="project_h3">iPhone</h3>
+            <AppleStoreBadge />
+          </Touchable>
+        )}
+        {webUrl && (
+          <Touchable
+            onClick={() => window.open(webUrl, "_blank")}
+            animation="zoom"
+            className="project_buttons project_buttons-container"
+          >
+            <h3 className="project_h3">Web Page</h3>
+            <WebPageBadge />
+          </Touchable>
+        )}
       </div>
-      <Slider {...slideSettigs} arrows className="project_container_image">
-        {images.map(image => (
-          <div>
-            <img
-              className="project_image"
-              alt={image.file.url}
-              src={image.file.url}
-            />
-          </div>
-        ))}
+      <Slider {...slideSettigs} className="project_container_image">
+        {images &&
+          images.map(image => (
+            <div>
+              <img
+                className="project_image"
+                alt={image.file.url}
+                src={image.file.url}
+              />
+            </div>
+          ))}
       </Slider>
       <section className="project_description">
-        <h2 className="project_h2">Technologies:</h2>
-        <ul className="project_list_technologies">
+        <h2 className="project_h2">About this project</h2>
+        <hr />
+        <p className="project_p">{about}</p>
+      </section>
+      <section className="project_description">
+        <h2 className="project_h2">Technical Sheet</h2>
+        <p>
+          Code technologies I got involved with while working on this project.
+        </p>
+        <hr />
+        <ul className="project_list-technologies">
           {technologies.map(technology => (
-            <li>
-              <Chip>{technology}</Chip>
+            <li className="project_list-item">
+              <span className="project_list-dot" />
+              {technology}
             </li>
           ))}
         </ul>
       </section>
+      <Footer />
     </div>
   );
 };

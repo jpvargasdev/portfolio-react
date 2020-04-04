@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// api
-import { graphql } from "gatsby";
-
 // components
 import { Seo } from "components/Base";
 import { Layout } from "components/Elements"
@@ -17,7 +14,7 @@ import "../../styles/index.scss";
 const IndexPage = ({ location }) => {
   return (
     <main>
-      <Seo />
+      <Seo title="Project" />
       <Project element={location.state.element} />
       <Layout showMenu showParticles />
     </main>
@@ -25,11 +22,11 @@ const IndexPage = ({ location }) => {
 };
 
 IndexPage.propTypes = {
-  element: PropTypes.object.isRequired,
-};
-
-IndexPage.defaultProps = {
-  element: {}
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      element: PropTypes.object.isRequired
+    })
+  }).isRequired
 };
 
 export default IndexPage;

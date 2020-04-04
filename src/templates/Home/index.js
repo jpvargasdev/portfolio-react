@@ -25,6 +25,7 @@ const Home = ({ description }) => {
           animation="elevation"
           onClick={navigateToHome}
           useIcon
+          size="small"
         />
       </div>
     </div>

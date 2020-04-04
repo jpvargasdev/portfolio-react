@@ -1,5 +1,7 @@
 .home {
   &_container {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden;
     display: flex;
     flex: 1;
     flex-direction: column;

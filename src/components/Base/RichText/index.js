@@ -18,9 +18,12 @@ const Paragraph = ({ children }) => <p className="rich_text rich_text-p">{childr
 
 const Hr = () => <br />;
 
-const H1 = ({ children }) => <h1 className="rich_text rich_text-h1">{children}</h1>
-const H6 = ({ children }) => <h6 className="rich_text rich_text-h6">{children}</h6>
-
+const H1 = ({ children }) => (
+  <h1 className="rich_text rich_text-h1">{children}</h1>
+);
+const H6 = ({ children }) => (
+  <h6 className="rich_text rich_text-h6">{children}</h6>
+);
 
 Bold.propTypes = types;
 Bold.defaultProps = typesDefault;

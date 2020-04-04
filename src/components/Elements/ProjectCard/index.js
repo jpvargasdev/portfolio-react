@@ -9,7 +9,7 @@ import Chip from "../../Base/Chip";
 import "./project-card.scss";
 
 const ProjectCard = ({ element, onClick }) => {
-  const { id, title, technologies, appImages } = element.node;
+  const { id, technologies, appImages } = element.node;
   const backgroundImage = {
     backgroundImage: `url(${appImages[0].file.url})`,
     backgroundPosition: "center",
@@ -42,11 +42,13 @@ ProjectCard.propTypes = {
       technologies: PropTypes.shape([]),
       appImages: PropTypes.shape({})
     })
-  })
+  }),
+  onClick: PropTypes.func,
 };
 
 ProjectCard.defaultProps = {
-  element: {}
+  element: {},
+  onClick: null
 };
 
 export default memo(ProjectCard);

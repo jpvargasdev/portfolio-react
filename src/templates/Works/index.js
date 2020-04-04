@@ -5,6 +5,7 @@ import { navigate } from "gatsby";
 // components
 import Filter from 'components/Elements/Filter';
 import ProjectCard from 'components/Elements/ProjectCard';
+import Footer from 'components/Elements/Footer';
 
 // style
 import "./works.scss";
@@ -59,6 +60,7 @@ class Works extends React.PureComponent {
             <ProjectCard element={element} onClick={this.onOpenProject} />
           ))}
         </ul>
+        <Footer />
       </div>
     );
   }

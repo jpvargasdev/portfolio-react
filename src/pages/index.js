@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <main>
-      <Seo />
+      <Seo title="Full-Stack Mobile and Web Developer Portfolio" />
       <Home description={json} />
       <Layout showParticles showMenu showSocial />
     </main>

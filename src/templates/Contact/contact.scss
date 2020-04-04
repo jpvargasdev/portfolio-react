@@ -1,0 +1,146 @@
+@import "../../styles/settings";
+
+.contact {
+
+  a {
+    font-weight: bold;
+  }
+
+  form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    @include respond-to("small") {
+			width: 60%;
+		}
+  }
+
+  h1 {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: $base-font-color;
+    margin-bottom: 20px;
+  }
+
+  p {
+    width: 90%;
+    @include respond-to("small") {
+      width: 60%;
+    }
+    font-size: large;
+    color: $base-font-color;
+    text-align: center;
+  }
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    @include respond-to("small") {
+			width: 70%;
+		}
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    @include respond-to("small") {
+			width: 100%;
+		}
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $menu-background-color;
+    outline: 0;
+    font-size: medium;
+    color: $base-font-color;
+    padding: 10px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  
+    &::placeholder {
+      color: transparent;
+    }
+  
+    &:placeholder-shown ~ .form__label {
+      font-size: medium;
+      cursor: text;
+      top: 20px;
+    }
+  }
+  
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: small;
+    color: $base-font-secondary-color;
+  }
+  
+  .form__field:hover {
+    ~ .form__label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.3s;
+      font-size: small;
+      color: $base-font-secondary-color;
+      font-weight:700;
+    }
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, $accent-color,$base-link-color);
+    border-image-slice: 1;
+  }
+
+  /* reset input */
+  .form__field {
+    &:required,&:invalid { box-shadow:none; }
+  }
+
+  .button {
+    padding: 5px 5px 5px 5px;
+    color: $base-color;
+    font-size: large;
+    font-weight: bolder;
+    border-radius: 2px;
+    border-width: 0;
+    box-shadow: $elevation1;
+
+    &_container {
+      width: 90%;
+      @include respond-to("small") {
+        width: 60%;
+      }
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &_next {
+      background-color: $accent-color;
+      margin-right: 5px;
+    }
+
+    &_send {
+      background-color: $unaccent-color;
+    }
+
+    &-true {
+      display: none;
+    }
+  }
+}
