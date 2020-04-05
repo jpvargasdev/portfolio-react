@@ -5,6 +5,7 @@
     position: absolute;
     right: 10px;
     background-color: transparent;
+    border-width: 0px;
     @include respond-to("small") {
       right: 5%;
     }
