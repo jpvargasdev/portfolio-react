@@ -15,7 +15,9 @@ const IndexPage = ({ location }) => {
   return (
     <main>
       <Seo title="Project" />
-      <Project element={location.state.element} />
+      <Project
+        element={(location && location.state && location.state.element) || null}
+      />
       <Layout showMenu showParticles />
     </main>
   );
