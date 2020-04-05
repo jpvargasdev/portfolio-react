@@ -25,8 +25,8 @@ const Layout = ({ showParticles, showMenu, showSocial, stickyMenu }) => (
     {showParticles && <Particles />}
     {showSocial && (
       <ul className="layout_social_icons">
-        <li className="layout_icon">
-          <Touchable animation="zoom">
+        <li>
+          <Touchable animation="zoom" className="layout_icon">
             <a
               href="https://github.com/iClownx"
               target="_blank"
@@ -36,8 +36,8 @@ const Layout = ({ showParticles, showMenu, showSocial, stickyMenu }) => (
             </a>
           </Touchable>
         </li>
-        <li className="layout_icon">
-          <Touchable animation="zoom">
+        <li>
+          <Touchable animation="zoom" className="layout_icon">
             <a
               href="https://www.linkedin.com/in/juan-vargas-1736649a/"
               target="_blank"
@@ -47,8 +47,8 @@ const Layout = ({ showParticles, showMenu, showSocial, stickyMenu }) => (
             </a>
           </Touchable>
         </li>
-        <li className="layout_icon">
-          <Touchable animation="zoom">
+        <li>
+          <Touchable animation="zoom" className="layout_icon">
             <a
               href="https://www.instagram.com/iclown_/"
               target="_blank"

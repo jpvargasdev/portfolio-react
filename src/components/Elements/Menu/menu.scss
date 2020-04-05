@@ -4,6 +4,7 @@
   &_button {
     position: absolute;
     right: 10px;
+    background-color: transparent;
     @include respond-to("small") {
       right: 5%;
     }

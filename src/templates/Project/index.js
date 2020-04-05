@@ -42,6 +42,7 @@ const slideSettigs = {
 };
 
 const Project = ({ element }) => {
+  if (!element) return null;
   const {
     about,
     androidUrl,
@@ -56,12 +57,12 @@ const Project = ({ element }) => {
     <div className="project_container">
       <h1 className="project_h1">{title}</h1>
       <p>{introduction}</p>
-      <div className="project_buttons">
+      <div className="project_buttons-container">
         {androidUrl && (
           <Touchable
             onClick={() => window.open(androidUrl, "_blank")}
             animation="zoom"
-            className="project_buttons project_buttons-container"
+            className="project_buttons"
           >
             <h3 className="project_h3">Android</h3>
             <GooglePlayBadge />
@@ -71,7 +72,7 @@ const Project = ({ element }) => {
           <Touchable
             onClick={() => window.open(iosUrl, "_blank")}
             animation="zoom"
-            className="project_buttons project_buttons-container"
+            className="project_buttons"
           >
             <h3 className="project_h3">iPhone</h3>
             <AppleStoreBadge />
@@ -81,7 +82,7 @@ const Project = ({ element }) => {
           <Touchable
             onClick={() => window.open(webUrl, "_blank")}
             animation="zoom"
-            className="project_buttons project_buttons-container"
+            className="project_buttons"
           >
             <h3 className="project_h3">Web Page</h3>
             <WebPageBadge />
