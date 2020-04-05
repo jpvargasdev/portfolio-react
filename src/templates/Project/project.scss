@@ -87,23 +87,28 @@
 		margin-right: 10px;
 	}
 
+	&_buttons-container {
+		padding: 5px 10px 5px 10px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+
 	&_buttons {
 		margin-bottom: 10px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: flex-start;
-		border-width: 2px;
-		border-color: $base-color;
+		justify-content: center;
+		border-width: 2px !important;
+		border-color: $base-link-color;
+		background-color: transparent;
 		margin-right: 10px;
 		border-radius: 2px;
 		min-width: 140px;
-
-		&-container {
-			padding: 5px 10px 5px 10px;
-			flex-direction: row;
-			align-items: center;
-			justify-content: center;
-		}
 	}
 }
