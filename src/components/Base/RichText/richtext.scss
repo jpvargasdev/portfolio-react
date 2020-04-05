@@ -3,35 +3,47 @@
 .rich_text {
   width: 100%;
   text-align: center;
-  h1 {
+  color: $base-font-color;
+
+  &_h1 {
     text-align: center;
-    font-size: larger;
+    font-size: 40px;
     font-weight: bolder;
   }
 
-  p {
-    font-size: medium;
+  &_p {
+    font-size: 100%;
     font-weight: 500;
   }
 
-  h2 {
+  &_h2 {
+    font-size: xx-large;
+    font-weight: bolder;
+  }
+
+  &_h3 {
+    font-weight: 700;
+    font-size: x-large;
+  }
+
+  &_h4 {
+    font-weight: 500;
+    font-size: larger;
+  }
+
+  &_h5 {
+    font-weight: 500;
     font-size: large;
-    @include respond-to("small") {
-      font-size: larger;
-		}
   }
-  h3 {
+
+  &_h6 {
     font-size: medium;
-    @include respond-to("small") {
-      font-size: large;
-		}
-  }
-  h6 {
     text-align: center;
   }
 
   &-bold {
     text-align: center;
     font-weight: bolder;
+    font-size: 100%;
   }
 }

@@ -56,6 +56,7 @@
 	&_p {
 		text-align: left;
 		font-size: medium;
+		font-weight: 500;
 	}
 
 	&_h1 {
@@ -72,13 +73,16 @@
 	}
 
 	&_h3 {
-		font-size: small;
+		font-size: medium;
 		font-weight: 500;
-		margin-right: 10px;
+		margin: 5px 10px;
 	}
 	
 	&_description {
-		margin-top: 20px;
+		margin-top: 15%;
+		@include respond-to("small") {
+			margin: 5%;
+		}
 	}
 
 	&_list-technologies {
@@ -107,11 +111,10 @@
 	}
 
 	&_buttons-container {
-		padding: 5px 10px 5px 10px;
+		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
@@ -119,7 +122,6 @@
 	}
 
 	&_buttons {
-		margin-bottom: 10px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -127,8 +129,13 @@
 		border-width: 2px;
 		border-color: $base-link-color;
 		background-color: transparent;
-		margin-right: 10px;
 		border-radius: 2px;
 		min-width: 140px;
+
+		margin: 5px;
+
+		@include respond-to("small") {
+			margin: 10px;
+		}
 	}
 }
