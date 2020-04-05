@@ -1,13 +1,14 @@
-import React from "react"
+import React from "react";
 
-import { Seo } from "../components/Base"
+import Seo from "components/Base/Seo";
+
+import NEW404 from "templates/404";
 
 const NotFoundPage = () => (
   <main>
     <Seo title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <NEW404 />
   </main>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

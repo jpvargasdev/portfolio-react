@@ -27,6 +27,13 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	&_about {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-direction: column;
+	}
 	
 	&_dots {
 		width: 15px;
@@ -37,6 +44,11 @@
 
 	&_image {
 		max-height: 500px;
+	}
+
+	&_p {
+		text-align: left;
+		font-size: medium;
 	}
 
 	&_h1 {

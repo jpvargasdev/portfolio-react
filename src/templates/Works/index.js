@@ -33,7 +33,7 @@ class Works extends React.PureComponent {
         return project;
       }
       if (item === "All") {
-        return project
+        return project;
       }
     });
     this.setState({ projects: newProjects });

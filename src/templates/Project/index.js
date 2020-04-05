@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Touchable from "components/Base/Touchable";
 import Footer from "components/Elements/Footer";
+import renderRichText from "components/Base/RichText";
 
 // images
 import AppleStoreBadge from "../../assets/app-store.svg";
@@ -53,10 +54,13 @@ const Project = ({ element }) => {
     title,
     webUrl
   } = element;
+  const { json } = about;
+  const RichText = renderRichText(json);
   return (
     <div className="project_container">
       <h1 className="project_h1">{title}</h1>
       <p>{introduction}</p>
+      <hr />
       <div className="project_buttons-container">
         {androidUrl && (
           <Touchable
@@ -89,6 +93,7 @@ const Project = ({ element }) => {
           </Touchable>
         )}
       </div>
+      <hr />
       <Slider {...slideSettigs} className="project_container_image">
         {images &&
           images.map(image => (
@@ -104,7 +109,7 @@ const Project = ({ element }) => {
       <section className="project_description">
         <h2 className="project_h2">About this project</h2>
         <hr />
-        <p className="project_p">{about}</p>
+        <div className="project_about">{RichText}</div>
       </section>
       <section className="project_description">
         <h2 className="project_h2">Technical Sheet</h2>

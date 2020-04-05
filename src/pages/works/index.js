@@ -23,7 +23,10 @@ export const query = graphql`
           id
           webUrl
           title
-          resume
+          about {
+            json
+          }
+          introduction
           technologies
           iosUrl
           androidUrl
