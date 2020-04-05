@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { navigate } from "gatsby";
 
 // components
 import renderRichText from "components/Base/RichText";
@@ -10,7 +9,7 @@ import Button from "components/Elements/Button";
 import "./home.scss";
 
 const navigateToHome = () => {
-  navigate("works ");
+  window.location.href = "works ";
 };
 
 const Home = ({ description }) => {
