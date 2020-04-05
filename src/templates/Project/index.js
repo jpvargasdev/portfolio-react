@@ -42,6 +42,7 @@ const slideSettigs = {
 };
 
 const Project = ({ element }) => {
+  if (!element) return null;
   const {
     about,
     androidUrl,
@@ -52,7 +53,6 @@ const Project = ({ element }) => {
     title,
     webUrl
   } = element;
-  if (!element) return null;
   return (
     <div className="project_container">
       <h1 className="project_h1">{title}</h1>
