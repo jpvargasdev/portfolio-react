@@ -10,6 +10,11 @@
       font-size: xx-large;
 		}
   }
+
+  p {
+    font-size: medium;
+  }
+
   h2 {
     font-size: large;
     @include respond-to("small") {
