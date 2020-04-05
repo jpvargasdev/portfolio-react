@@ -20,7 +20,7 @@ const Hr = () => <br />;
 
 const H1 = ({ children }) => <h1 className="rich_text">{children}</h1>;
 
-const H2 = ({ children }) => <h1 className="rich_text">{children}</h1>;
+const H2 = ({ children }) => <h2 className="rich_text">{children}</h2>;
 
 const H3 = ({ children }) => <h3 className="rich_text">{children}</h3>;
 

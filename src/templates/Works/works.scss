@@ -7,17 +7,13 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20%;
+  margin-bottom:5%;
+  width: 90%;
 
-  @include respond-to("mobile") {
-    margin-top: 10%;
-    width: 90%;
-  }
   @include respond-to("small") {
-    margin-top: 10%;
-    width: 90%;
-  }
-  @include respond-to("medium") {
     margin-top: 5%;
+    margin-bottom:5%;
     width: 90%;
   }
 
