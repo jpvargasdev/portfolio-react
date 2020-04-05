@@ -52,6 +52,7 @@ const Project = ({ element }) => {
     title,
     webUrl
   } = element;
+  if (element === null) return null;
   return (
     <div className="project_container">
       <h1 className="project_h1">{title}</h1>

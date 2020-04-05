@@ -26,7 +26,15 @@ IndexPage.propTypes = {
     state: PropTypes.shape({
       element: PropTypes.object.isRequired
     })
-  }).isRequired
+  })
+};
+
+IndexPage.defaultProps = {
+  location: {
+    state: {
+      element: null
+    }
+  }
 };
 
 export default IndexPage;
