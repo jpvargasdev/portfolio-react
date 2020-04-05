@@ -4,10 +4,6 @@
   "description": "developer portfolio",
   "version": "0.1.0",
   "author": "Juan Vargas <vargasm.jp@gmail.com>",
-  "engines": {
-    "node": "10.15.0",
-    "yarn": "1.22.0"
-  },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@contentful/rich-text-types": "^13.4.0",
