@@ -5,20 +5,19 @@
   text-align: center;
   h1 {
     text-align: center;
-    font-size: x-large;
-    @include respond-to("small") {
-      font-size: xx-large;
-		}
+    font-size: larger;
+    font-weight: bolder;
   }
 
   p {
     font-size: medium;
+    font-weight: 500;
   }
 
   h2 {
     font-size: large;
     @include respond-to("small") {
-      font-size: x-large;
+      font-size: larger;
 		}
   }
   h3 {
