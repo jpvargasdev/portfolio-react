@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // components
-import renderRichText from "components/Base/RichText";
 import Button from "components/Elements/Button";
 
 // styles
@@ -13,10 +12,9 @@ const navigateToHome = () => {
 };
 
 const Home = ({ description }) => {
-  const RichText = renderRichText(description);
   return (
     <div className="home_container">
-      <div className="home_description">{RichText}</div>
+      <div className="home_description">{description}</div>
       <div className="home_button">
         <Button
           text="Go to my projects"

@@ -2,44 +2,6 @@
 
 .rich_text {
   width: 100%;
-  text-align: center;
-  color: $base-font-color;
-
-  &_h1 {
-    text-align: center;
-    font-size: 40px;
-    font-weight: bolder;
-  }
-
-  &_p {
-    font-size: 100%;
-    font-weight: 500;
-  }
-
-  &_h2 {
-    font-size: xx-large;
-    font-weight: bolder;
-  }
-
-  &_h3 {
-    font-weight: 700;
-    font-size: x-large;
-  }
-
-  &_h4 {
-    font-weight: 500;
-    font-size: larger;
-  }
-
-  &_h5 {
-    font-weight: 500;
-    font-size: large;
-  }
-
-  &_h6 {
-    font-size: medium;
-    text-align: center;
-  }
 
   &-bold {
     text-align: center;

@@ -60,7 +60,6 @@ const Project = ({ element }) => {
     <div className="project_container">
       <h1 className="project_h1">{title}</h1>
       <p>{introduction}</p>
-      <hr />
       <div className="project_buttons-container">
         {androidUrl && (
           <Touchable

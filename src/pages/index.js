@@ -7,6 +7,7 @@ import { graphql } from "gatsby";
 // components
 import { Seo } from "components/Base";
 import { Layout } from "components/Elements"
+import renderRichText from "components/Base/RichText";
 
 // template
 import Home from "templates/Home";
@@ -29,12 +30,13 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ data }) => {
-  const { json } = data.allContentfulAuthor.edges[1].node.description;
+  const { json } = data.allContentfulAuthor.edges[0].node.description;
+  const RichText = renderRichText(json);
 
   return (
     <main>
       <Seo title="Full-Stack Mobile and Web Developer Portfolio" />
-      <Home description={json} />
+      <Home description={RichText} />
       <Layout showParticles showMenu showSocial />
     </main>
   );
