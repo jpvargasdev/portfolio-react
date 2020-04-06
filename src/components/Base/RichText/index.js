@@ -59,8 +59,8 @@ const options = {
     [BLOCKS.HEADING_1]: (node, children) => <H1>{children}</H1>,
     [BLOCKS.HEADING_2]: (node, children) => <H2>{children}</H2>,
     [BLOCKS.HEADING_3]: (node, children) => <H3>{children}</H3>,
-    [BLOCKS.HEADING_3]: (node, children) => <H4>{children}</H4>,
-    [BLOCKS.HEADING_3]: (node, children) => <H5>{children}</H5>,
+    [BLOCKS.HEADING_4]: (node, children) => <H4>{children}</H4>,
+    [BLOCKS.HEADING_5]: (node, children) => <H5>{children}</H5>,
     [BLOCKS.HEADING_6]: (node, children) => <H6>{children}</H6>
   }
 };
