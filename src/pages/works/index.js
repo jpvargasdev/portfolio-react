@@ -59,7 +59,7 @@ export const query = graphql`
 `;
 
 const WorksPage = ({ data }) => {
-  const { json } = data.allContentfulAuthor.edges[1].node.description;
+  const { json } = data.allContentfulAuthor.edges[0].node.description;
   const projects = data.allContentfulProjects.edges;
   const projectsFiltered = Array.from(
     new Set(projects.map(a => a.node.title))

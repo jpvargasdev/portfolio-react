@@ -30,7 +30,7 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ data }) => {
-  const { json } = data.allContentfulAuthor.edges[0].node.description;
+  const { json } = data.allContentfulAuthor.edges[1].node.description;
   const RichText = renderRichText(json);
 
   return (
