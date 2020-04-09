@@ -61,11 +61,16 @@ export const query = graphql`
 const WorksPage = ({ data }) => {
   const { json } = data.allContentfulAuthor.edges[1].node.description;
   const projects = data.allContentfulProjects.edges;
+  const projectsFiltered = Array.from(
+    new Set(projects.map(a => a.node.title))
+  ).map(title => {
+    return projects.find(a => a.node.title === title);
+  });
   const RichText = renderRichText(json);
   return (
     <main>
       <Seo title="Full-Stack Mobile and Web Developer Portfolio" />
-      <Works projects={projects} description={RichText} />
+      <Works projects={projectsFiltered} description={RichText} />
       <Layout showMenu showParticles stickyMenu />
     </main>
   );
