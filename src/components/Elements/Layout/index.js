@@ -34,7 +34,7 @@ const Layout = ({
         <li>
           <Touchable animation="zoom" className="layout_icon">
             <a
-              href="https://github.com/iClownx"
+              href="https://github.com/jp-vargas"
               target="_blank"
               rel="noopener noreferrer"
             >
