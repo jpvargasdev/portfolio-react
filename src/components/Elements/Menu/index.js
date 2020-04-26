@@ -26,7 +26,7 @@ const Menu = ({ stickyMenu }) => {
     <nav>
       <div className={style}>
         <Button
-          text="About"
+          text="Home"
           variant="menu"
           onClick={() => navigateToRoute("/")}
         />
@@ -39,6 +39,11 @@ const Menu = ({ stickyMenu }) => {
           text="Contact"
           variant="menu"
           onClick={() => navigateToRoute("/contact")}
+        />
+        <Button
+          text="About"
+          variant="menu"
+          onClick={() => navigateToRoute("/about")}
         />
       </div>
       <Touchable

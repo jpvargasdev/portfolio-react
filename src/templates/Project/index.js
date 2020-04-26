@@ -57,9 +57,11 @@ const Project = ({ element }) => {
   const { json } = about;
   const RichText = renderRichText(json);
   return (
-    <div className="project_container">
-      <h1 className="project_h1">{title}</h1>
-      <p>{introduction}</p>
+    <div className="project project_container">
+      <h1>{title}</h1>
+      <br />
+      <p className="center">{introduction}</p>
+      <br />
       <div className="project_buttons-container">
         {androidUrl && (
           <Touchable
@@ -67,7 +69,7 @@ const Project = ({ element }) => {
             animation="zoom"
             className="project_buttons"
           >
-            <h3 className="project_h3">Android</h3>
+            <h6>Android</h6>
             <GooglePlayBadge />
           </Touchable>
         )}
@@ -77,7 +79,7 @@ const Project = ({ element }) => {
             animation="zoom"
             className="project_buttons"
           >
-            <h3 className="project_h3">iPhone</h3>
+            <h6>iPhone</h6>
             <AppleStoreBadge />
           </Touchable>
         )}
@@ -87,7 +89,7 @@ const Project = ({ element }) => {
             animation="zoom"
             className="project_buttons"
           >
-            <h3 className="project_h3">Web Page</h3>
+            <h6>Web Page</h6>
             <WebPageBadge />
           </Touchable>
         )}

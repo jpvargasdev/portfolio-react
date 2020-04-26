@@ -1,12 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-@import "./functions/maps";
-
-// Table of Contents:
-//
-// 1. Globals
-// 2. Colors
-// 3. Typography
-// 4. Font Scaling
 
 // 1. Globals
 // ------
@@ -27,19 +19,19 @@ $grid-breakpoints: (
 $base-background-color: white !default;
 $base-background-dark-color: #222431;
 $base-color: #EAF2F9 !default;
-$accent-color: #EF873C !default;
-$base-font-color: #222431 !default;
-$base-font-secondary-color: #636680 !default;
-$base-link-color: #31456A !default;
+$accent-color: #A70000 !default;
+$base-font-color: #333 !default;
+$base-font-secondary-color: #7A7887 !default;
+$base-link-color: #A70000 !default;
 $menu-background-color: rgba(gray, 0.8);
 $unaccent-color: #6FCC6A;
 
 // 3. Typography
 // ------
 $base-font-size: 100% !default; // 16px on all browsers
-$base-line-height: 1.5 !default;
-$base-font-weight: 400 !default;
-$base-font-family: 'Poppins', helvetica, arial, sans-serif !default;
+$base-line-height: 1.4 !default;
+$base-font-weight: 500 !default;
+$base-font-family: 'Poppins', arial, sans-serif !default;
 $brand-font-regular: 'Poppins Regular', $base-font-family !default;
 $brand-font-medium: 'Poppins Medium', $base-font-family !default;
 $brand-font-bold: 'Poppins Bold', $base-font-family !default;
@@ -104,11 +96,5 @@ $elevation6: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
-}
-
-// slick slide fix
-.slick-slide {
-  width: auto !important;
-  margin-left: 2%;
 }
 

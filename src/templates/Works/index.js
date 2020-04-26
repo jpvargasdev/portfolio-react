@@ -52,9 +52,11 @@ class Works extends React.PureComponent {
     const { description } = this.props;
     const { projects } = this.state;
     return (
-      <div className="projects projects_filter">
+      <div className="projects">
         <div className="projects_description">{description}</div>
+        <br/>
         <Filter onFilterChange={this.onFilterChange} />
+        <br/>
         <ul className="projects_container">
           {projects.map(element => (
             <ProjectCard element={element} onClick={this.onOpenProject} />

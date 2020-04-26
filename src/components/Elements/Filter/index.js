@@ -25,7 +25,7 @@ class Filter extends React.PureComponent {
   render() {
     const { technologies, selected } = this.state;
     return (
-      <ul className="filter filter_container">
+      <ul className="filter_container">
         {technologies.map((item, index) => (
           <Chip
             onClick={this.onChipClicked}

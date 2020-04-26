@@ -17,41 +17,44 @@ import "../styles/index.scss";
 
 export const query = graphql`
   {
-    allContentfulAuthor {
-      edges {
-        node {
-          description {
-            json
-          }
-        }
+    contentfulAuthor(page: { eq: "Home" }) {
+      text {
+        json
       }
+      seoTitle
     }
   }
 `;
 
-const IndexPage = ({ data }) => {
-  const { json } = data.allContentfulAuthor.edges[1].node.description;
+const HomePage = ({ data }) => {
+  const {
+    text: { json },
+    seoTitle
+  } = data.contentfulAuthor;
   const RichText = renderRichText(json);
 
   return (
     <main>
-      <Seo title="Full-Stack Mobile and Web Developer Portfolio" />
+      <Seo title={seoTitle} />
       <Home description={RichText} />
       <Layout showParticles showMenu showSocial />
     </main>
   );
 };
 
-IndexPage.propTypes = {
+HomePage.propTypes = {
   data: PropTypes.shape({
-    allContentfulAuthor: PropTypes.shape({
-      edges: PropTypes.shape([])
+    contentfulAuthor: PropTypes.shape({
+      text: PropTypes.shape({
+        json: PropTypes.object
+      }),
+      seoTitle: PropTypes.string
     })
   })
 };
 
-IndexPage.defaultProps = {
+HomePage.defaultProps = {
   data: {}
 };
 
-export default IndexPage;
+export default HomePage;

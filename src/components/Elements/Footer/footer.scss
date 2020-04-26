@@ -5,24 +5,6 @@
     display: flex;
     margin-top: 30px;
     flex-direction: column;
-
-    h3 {
-      color: $base-font-color;
-      font-size: x-large;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    p {
-      color: $base-font-color;
-      font-size: medium;
-      text-align: center;
-      font-weight: 500;
-    }
-
-    span {
-      font-weight: bold;
-      text-align: center;
-    }
+    text-align: center;
   }
 }

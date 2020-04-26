@@ -7,51 +7,62 @@ import { graphql } from "gatsby";
 // components
 import { Seo } from "components/Base";
 import { Layout } from "components/Elements"
+import renderRichText from "components/Base/RichText";
 
 // template
-import Contact from "templates/Contact";
+import About from "templates/About";
 
 // styles
 import "../styles/index.scss";
 
 export const query = graphql`
   {
-    contentfulAuthor(page: { eq: "Contact" }) {
+    contentfulAuthor(page: { eq: "About" }) {
       text {
         json
       }
       seoTitle
+      image {
+        title
+        file {
+          url
+        }
+      }
     }
   }
 `;
 
-const ContactPage = ({ data }) => {
+const AboutPage = ({ data }) => {
   const {
     text: { json },
-    seoTitle
+    seoTitle,
+    image
   } = data.contentfulAuthor;
+  const RichText = renderRichText(json);
+
   return (
     <main>
       <Seo title={seoTitle} />
-      <Contact />
-      <Layout showParticles showMenu showSocial />
+      <About description={RichText} image={image} />
+      <Layout showParticles showMenu showSocial stickyIcons />
     </main>
   );
 };
 
-ContactPage.propTypes = {
+AboutPage.propTypes = {
   data: PropTypes.shape({
     contentfulAuthor: PropTypes.shape({
       text: PropTypes.shape({
         json: PropTypes.object
       }),
-      seoTitle: PropTypes.string
+      seoTitle: PropTypes.string,
+      image: PropTypes.object
     })
   })
 };
 
-ContactPage.defaultProps = {
+AboutPage.defaultProps = {
   data: {}
 };
 
-export default ContactPage;
+export default AboutPage;

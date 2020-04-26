@@ -11,7 +11,7 @@ import Project from "templates/Project";
 // styles
 import "../../styles/index.scss";
 
-const IndexPage = ({ location }) => {
+const ProjectPage = ({ location }) => {
   return (
     <main>
       <Seo title="Project" />
@@ -23,7 +23,7 @@ const IndexPage = ({ location }) => {
   );
 };
 
-IndexPage.propTypes = {
+ProjectPage.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
       element: PropTypes.object
@@ -31,7 +31,7 @@ IndexPage.propTypes = {
   })
 };
 
-IndexPage.defaultProps = {
+ProjectPage.defaultProps = {
   location: {
     state: {
       element: null
@@ -39,4 +39,4 @@ IndexPage.defaultProps = {
   }
 };
 
-export default IndexPage;
+export default ProjectPage;

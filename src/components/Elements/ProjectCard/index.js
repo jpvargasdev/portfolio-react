@@ -1,4 +1,5 @@
-/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 
@@ -10,27 +11,23 @@ import "./project-card.scss";
 
 const ProjectCard = ({ element, onClick }) => {
   const { id, technologies, appImages } = element.node;
-  const backgroundImage = {
-    backgroundImage: `url(${appImages[0].file.url})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat"
-  };
 
   return (
-    <li
+    <ul
       key={id}
-      className="project-card_item"
-      style={backgroundImage}
+      className="project_card-container"
       type="button"
       onClick={() => onClick(element.node)}
     >
-      <ul className="project-card_content">
-        {technologies.map((item, index) => (
-          <Chip key={index}>{item}</Chip>
-        ))}
-      </ul>
-    </li>
+      <li className="project_card-card">
+        <img src={appImages[0].file.url} alt="project" />
+        <ul>
+          {technologies.map(technology => (
+            <Chip>{technology}</Chip>
+          ))}
+        </ul>
+      </li>
+    </ul>
   );
 };
 

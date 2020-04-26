@@ -17,6 +17,11 @@
       bottom: unset;
       margin-left: 5%;
     }
+
+    &-true {
+      position: fixed;
+      bottom: 10px;
+    }
   }
 
   &_content {

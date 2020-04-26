@@ -28,6 +28,18 @@
     opacity: 0;
     transition: all .5s;
 
+    @include respond-to("mobile") {
+      padding-top: 20%;
+    }
+
+    @include respond-to("small") {
+      padding-top: 5%;
+    }
+
+    @include respond-to("medium") {
+      padding-top: 2%;
+    }
+
     &-open {
       visibility: visible;
       opacity: 1;

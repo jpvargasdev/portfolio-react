@@ -13,8 +13,8 @@ const navigateToHome = () => {
 
 const Home = ({ description }) => {
   return (
-    <div className="home_container">
-      <div className="home_description">{description}</div>
+    <div className="home home_container">
+      <div className="home home_description">{description}</div>
       <div className="home_button">
         <Button
           text="Go to my projects"

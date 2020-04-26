@@ -20,11 +20,17 @@ const DEFAULT_ICON_PROPS = {
   color: "black"
 };
 
-const Layout = ({ showParticles, showMenu, showSocial, stickyMenu }) => (
+const Layout = ({
+  showParticles,
+  showMenu,
+  showSocial,
+  stickyMenu,
+  stickyIcons
+}) => (
   <div>
     {showParticles && <Particles />}
     {showSocial && (
-      <ul className="layout_social_icons">
+      <ul className={`layout_social_icons layout_social_icons-${stickyIcons}`}>
         <li>
           <Touchable animation="zoom" className="layout_icon">
             <a
@@ -68,14 +74,16 @@ Layout.propTypes = {
   showParticles: PropTypes.bool,
   showMenu: PropTypes.bool,
   showSocial: PropTypes.bool,
-  stickyMenu: PropTypes.bool
+  stickyMenu: PropTypes.bool,
+  stickyIcons: PropTypes.bool
 };
 
 Layout.defaultProps = {
   showParticles: false,
   showMenu: false,
   showSocial: false,
-  stickyMenu: false
+  stickyMenu: false,
+  stickyIcons: false
 };
 
 export default memo(Layout);

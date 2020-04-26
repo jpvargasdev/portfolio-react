@@ -11,24 +11,23 @@ const typesDefault = {
   children: {}
 };
 
-const Bold = ({ children }) => (
-  <span className="rich_text rich_text-bold">{children}</span>
-);
-const Paragraph = ({ children }) => <p className="rich_text">{children}</p>;
+const Bold = ({ children }) => <span className="black">{children}</span>;
+
+const Paragraph = ({ children }) => <p>{children}</p>;
 
 const Hr = () => <br />;
 
-const H1 = ({ children }) => <h1 className="rich_text">{children}</h1>;
+const H1 = ({ children }) => <h1>{children}</h1>;
 
-const H2 = ({ children }) => <h2 className="rich_text">{children}</h2>;
+const H2 = ({ children }) => <h2>{children}</h2>;
 
-const H3 = ({ children }) => <h3 className="rich_text">{children}</h3>;
+const H3 = ({ children }) => <h3>{children}</h3>;
 
-const H4 = ({ children }) => <h4 className="rich_text">{children}</h4>;
+const H4 = ({ children }) => <h4>{children}</h4>;
 
-const H5 = ({ children }) => <h5 className="rich_text">{children}</h5>;
+const H5 = ({ children }) => <h5>{children}</h5>;
 
-const H6 = ({ children }) => <h6 className="rich_text">{children}</h6>;
+const H6 = ({ children }) => <h6>{children}</h6>;
 
 Bold.propTypes = types;
 Bold.defaultProps = typesDefault;
