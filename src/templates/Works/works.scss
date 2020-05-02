@@ -28,6 +28,24 @@
     width: 65%;
   }
 
+  h4 {
+    @include respond-to("mobile") {
+      font-size: 1.2em;
+    }
+    @include respond-to("medium") {
+      font-size: 1.5em;
+    }
+  }
+
+  h1 {
+    @include respond-to("mobile") {
+      font-size: 2em;
+    }
+    @include respond-to("medium") {
+      font-size: 2em;
+    }
+  }
+
   &_container {
     display: flex;
     flex-wrap: wrap;

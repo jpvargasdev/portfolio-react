@@ -13,8 +13,8 @@
       margin-bottom: 20px;
 
       @include respond-to("mobile") {
-        padding: 15px 20px !important;
-        font-size: medium;
+        padding: 10px 10px !important;
+        font-size: small;
       }
     }
   }

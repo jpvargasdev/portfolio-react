@@ -11,7 +11,7 @@ const About = ({
     file: { url }
   }
 }) => (
-  <div className="about">
+  <div className="about about_container">
     <div className="about_image">
       <img src={url} alt={title} />
     </div>

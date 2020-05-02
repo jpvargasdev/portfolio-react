@@ -17,7 +17,7 @@ const Home = ({ description }) => {
       <div className="home home_description">{description}</div>
       <div className="home_button">
         <Button
-          text="Go to my projects"
+          text="Go to my portfolio"
           variant="icon"
           animation="elevation"
           onClick={navigateToHome}

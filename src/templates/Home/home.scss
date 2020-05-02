@@ -22,6 +22,28 @@
     }
   }
 
+  h3 {
+    @include respond-to("mobile") {
+      font-size: 1.4em;
+    }
+    @include respond-to("medium") {
+      font-size: 1.6em;
+    }
+  }
+
+  h1 {
+    @include respond-to("mobile") {
+      font-size: 1.5em;
+    }
+    @include respond-to("medium") {
+      font-size: 2em;
+    }
+  }
+
+  a {
+    color: black;
+  }
+
   &_description {
     margin-bottom: 16px;
     flex-direction: column;

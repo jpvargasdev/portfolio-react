@@ -67,6 +67,8 @@ class Contact extends React.PureComponent {
 
   render() {
     const {
+      name,
+      email,
       message,
       count,
     } = this.state;
@@ -79,6 +81,7 @@ class Contact extends React.PureComponent {
     return (
       <section className="contact contact_container">
         <h1>Get in touch</h1>
+        <br />
         <p>
           If you wanna get in touch, talk to me about a project collaboration or
           just say hi, fill up the form below or send an email to

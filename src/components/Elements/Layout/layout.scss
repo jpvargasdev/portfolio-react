@@ -20,7 +20,10 @@
 
     &-true {
       position: fixed;
-      bottom: 10px;
+      bottom: 1%;
+      @include respond-to("small") {
+        bottom: 40%;
+      }
     }
   }
 
