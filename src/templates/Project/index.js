@@ -6,8 +6,7 @@ import PropTypes from "prop-types";
 
 // components
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import Touchable from "components/Base/Touchable";
 import Footer from "components/Elements/Footer";
 import renderRichText from "components/Base/RichText";
@@ -19,6 +18,8 @@ import WebPageBadge from "../../assets/www-page.svg";
 
 // styles
 import "./project.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // constants
 const slideSettigs = {
@@ -27,7 +28,7 @@ const slideSettigs = {
   adaptiveHeight: true,
   speed: 2000,
   autoplay: true,
-  slidesToShow: 2,
+  slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
   centerMode: "center",
@@ -46,6 +47,8 @@ const Project = ({ element }) => {
   if (!element) return null;
   const {
     about,
+    functions,
+    challenges,
     androidUrl,
     images,
     iosUrl,
@@ -54,8 +57,10 @@ const Project = ({ element }) => {
     title,
     webUrl
   } = element;
-  const { json } = about;
-  const RichText = renderRichText(json);
+  const AboutText = renderRichText(about.json);
+  const FunctionsText = renderRichText(functions.json);
+  const ChallengesText = renderRichText(challenges.json);
+
   return (
     <div className="project project_container">
       <h1>{title}</h1>
@@ -107,11 +112,25 @@ const Project = ({ element }) => {
             </div>
           ))}
       </Slider>
+      <br />
       <section className="project_description">
         <h2 className="project_h2">About this project</h2>
         <hr />
-        <div className="project_about">{RichText}</div>
+        <div className="project_about">{AboutText}</div>
       </section>
+      <br />
+      <section className="project_description">
+        <h2 className="project_h2">Functions</h2>
+        <hr />
+        <div className="project_about">{FunctionsText}</div>
+      </section>
+      <br />
+      <section className="project_description">
+        <h2 className="project_h2">Challenges</h2>
+        <hr />
+        <div className="project_about">{ChallengesText}</div>
+      </section>
+      <br />
       <section className="project_description">
         <h2 className="project_h2">Technical Sheet</h2>
         <p>

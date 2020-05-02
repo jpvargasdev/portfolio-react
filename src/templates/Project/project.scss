@@ -62,6 +62,10 @@
 		}
 	}
 
+	&_description {
+		width: 100%;
+	}
+
 	&_container_image {
 		@include respond-to("mobile") {
 			width: 100%;
@@ -82,24 +86,10 @@
 		align-items: flex-start;
 		flex-direction: column;
 	}
-	
-	&_dots {
-		width: 15px;
-		height: 15px;
-		background-color: "gray";
-		border-radius: 15;
-	}
 
 	&_image {
-		max-height: 500px;
-	}
-	
-	&_description {
-		width: 100%;
-		margin-top: 15%;
-		@include respond-to("small") {
-			margin-top: 5%;
-		}
+		object-fit: cover;
+		max-height: 400px;
 	}
 
 	&_list-technologies {

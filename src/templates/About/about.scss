@@ -36,7 +36,15 @@
   }
 
   h1 {
-    font-size: x-large;
+    font-size: large;
+
+    @include respond-to("small") {
+      font-size: x-large;
+    }
+  }
+
+  h2 {
+    font-size: large;
   }
 
   p {

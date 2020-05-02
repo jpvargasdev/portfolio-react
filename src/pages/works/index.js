@@ -23,10 +23,16 @@ export const query = graphql`
           id
           webUrl
           title
+          introduction
           about {
             json
           }
-          introduction
+          functions {
+            json
+          }
+          challenges {
+            json
+          }
           technologies
           iosUrl
           androidUrl
